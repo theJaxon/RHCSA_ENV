@@ -1,4 +1,6 @@
 # RHCSA_ENV
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
+
 An environment to prepare for the RHCSA certification, mainly automates server side installation of samba and NFS (RHCSA deals only with the client side)
 
 ### How to use:
