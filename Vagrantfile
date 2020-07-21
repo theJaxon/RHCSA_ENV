@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
       share.vm.hostname = "share-#{i}"
       share.vm.network "private_network", ip: "192.168.50.#{i + 210}"
       share.vm.provision "shell", inline:  <<-SHELL
-      sudo echo "setenforce 1" >> /home/vagrant/.bashrc # Set SELinux to enforcing mode (by default on this box it's in permissive mode)
+      sudo echo "sudo setenforce 1" >> /home/vagrant/.bashrc # Set SELinux to enforcing mode (by default on this box it's in permissive mode)
       sudo yum update 
       sudo yum install -y nfs-utils cifs-utils samba-client samba
       sudo systemctl enable --now {nfs-server,smb,firewalld}
