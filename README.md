@@ -5,27 +5,34 @@ An environment to prepare for the RHCSA certification, mainly automates server s
 
 ### How to use:
 
-`vagrant up` will bring three machines:
+`vagrant up` will bring three machines `controller`, `share_1` and `share_2`
 
-1- controller 
+Details for these machines are as follows:
 
-2- share_1
-
-3- share_2
+| Machine name |   IP address   |   FQDN   |
+|:------------:|:--------------:|:--------:|
+|  controller  | 192.168.50.210 |          |
+|    share_1   | 192.168.50.211 |  nfs.com |
+|    share_2   | 192.168.50.212 | cifs.com |
 
 after the machines are up and running do `vagrant ssh controller` and from there start practicing.
-ex: showing NFS shares 
+
+SSH keys have already been generated on the controller so from the controller you can ssh into any of the 2 machines using
+
+```bash
+ssh cifs.com
+
+ssh nfs.com
+```
+
+---
+
+#### showing NFS shares 
 
 `showmount -e nfs.com` OR `showmount -e cifs.com`
 
-ex: showing samba shares 
+#### showing samba shares 
 
-`smbclient -U cifs //cifs.com/cifs`
+`smbclient -U cifs //cifs.com/cifs` OR `smbclient -U cifs //nfs.com/cifs`
 
 *password is **cifs**
-
- To ssh into the machines use 
-`ssh vagrant@nfs.com` OR `ssh vagrant@cifs.com` 
-
-*password is **vagrant**
-
