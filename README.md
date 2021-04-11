@@ -1,5 +1,6 @@
 # RHCSA_ENV
-[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
+![RHCSA](https://img.shields.io/badge/-RHCSA-EE0000?style=for-the-badge&logo=Red%20Hat&logoColor=white)
+![Vagrant](https://img.shields.io/badge/-Vagrant-1563FF?style=for-the-badge&logo=Vagrant&logoColor=white)
 
 An environment to prepare for the RHCSA certification, mainly automates server side installation of samba and NFS (RHCSA deals only with the client side)
 

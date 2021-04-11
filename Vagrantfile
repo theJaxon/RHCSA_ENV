@@ -1,10 +1,10 @@
 Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", type: "rsync"
   config.vm.box_check_update = false
+  config.vm.box = "bento/centos-8"
 
   (1..2).each do |i|
     config.vm.define "share-#{i}" do |share|
-      share.vm.box = "bento/centos-8"
       share.vm.hostname = "share-#{i}"
       share.vm.network "private_network", ip: "192.168.50.#{i + 210}"
 
@@ -22,13 +22,10 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "controller" do |controller|
-    controller.vm.box = "bento/centos-8"
     controller.vm.hostname = "controller"
     controller.vm.network "private_network", ip: "192.168.50.210"
     controller.vm.provision "shell", path: "controller.sh"
   end
-
 end
-
 
 # [1] https://stackoverflow.com/questions/3323966/echo-smbpasswd-by-stdin-doesnt-work
